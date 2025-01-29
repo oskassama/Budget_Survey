@@ -1,4 +1,3 @@
-
 # Income & Spending Survey Tool
 
 **A Flask web application for collecting and analyzing spending data of users.**
@@ -17,12 +16,9 @@ Install all required packages using the command:
 
 ```bash
 pip install -r requirements.txt
+  ```bash
+
 ```plaintext
-
-Contents of `requirements.txt`:
-
-  ```plaintext
-
 Flask==3.0.0
 pymongo==4.5.0
 pandas==2.1.1
@@ -30,7 +26,6 @@ matplotlib==3.7.1
 seaborn==0.12.2
 jupyter==1.0.0
 python-dotenv==1.0.0
-
   ```plaintext
 
 ---
@@ -42,7 +37,7 @@ python-dotenv==1.0.0
 ```bash
 git clone <repository_url>
 cd <repository_folder>
-  ```plaintext
+```
 
 ### 2. Set Up MongoDB
 
@@ -105,10 +100,10 @@ python main.py
 
 ### Prerequisites (Windows User)
 
-- IAWS EC2 Instance
-- IPuTTY for SSH connection
-- IWinSCP for file transfer
-- IFlask application ready
+- AWS EC2 Instance
+- PuTTY for SSH connection
+- WinSCP for file transfer
+- Flask application ready
 
 ### 1. Initial Setup
 
@@ -135,10 +130,9 @@ pip install -r requirements.txt
 pip install gunicorn
 ```
 
-### 3. Environment Preparation
+### 3. Security Group Configuration
 
 - Open required ports (80, 8000) in AWS EC2 security group
-
 - Allow inbound traffic from 0.0.0.0/0
 
 ### 4. Application Deployment
@@ -151,9 +145,8 @@ sudo nohup gunicorn --bind 0.0.0.0:80 main:app > gunicorn.log 2>&1 &
 ### 5. Verification
 
 - Access application via EC2 public DNS
-
 - Check gunicorn.log for any deployment issues
-- Verify application is running using ps aux | grep gunicorn
+- Verify application is running using `ps aux | grep gunicorn`
 
 ### 6. View Application
 
@@ -166,9 +159,21 @@ sudo nohup gunicorn --bind 0.0.0.0:80 main:app > gunicorn.log 2>&1 &
 ```plaintext
 .
 ├── main.py                 # Flask application
-├── surver_form/
-│   └── survey.html        # HTML template for survey form
-├── data.py                # Python class for data export
-├── requirements.txt       # Python dependencies
-├── README.md              # Project documentation
-└── visualization.ipynb    # Jupyter notebook for data visualization
+├── survey_form/
+│   └── survey.html         # HTML template for survey form
+├── data.py                 # Python class for data export
+├── requirements.txt        # Python dependencies
+├── README.md               # Project documentation
+└── visualization.ipynb     # Jupyter notebook for data visualization
+```
+
+---
+
+## 📚 References
+
+1. [HTML Forms - W3Schools](https://www.w3schools.com/html/html_forms.asp)
+2. [Flask Documentation](https://flask.palletsprojects.com/en/3.0.x/)
+3. [PyMongo Documentation](https://pymongo.readthedocs.io/en/stable/)
+4. [MongoDB Manual Tutorial](https://www.mongodb.com/docs/manual/tutorial/)
+5. [Flask render_template API](https://flask.palletsprojects.com/en/3.0.x/api/#flask.render_template)
+6. [Python CSV Library Documentation](https://docs.python.org/3/library/csv.html)
