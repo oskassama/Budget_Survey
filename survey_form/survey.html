@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>Monthly Budget Survey</title>
+    <!-- Source : https://www.w3schools.com/html/html_forms.asp -->
+    <style>
+        body { font-family: Arial; padding: 20px; max-width: 600px; margin: auto; }
+        .input-group { margin-bottom: 15px; }
+        input { width: 100px; margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Monthly Budget Survey</h1>
+    
+    <form id="surveyForm" method="POST" action="/submit">
+        <!-- Basic Information -->
+        <div class="input-group">
+            <label>Age: <input type="number" name="age" required></label>
+        </div>
+
+        <div class="input-group">
+            <label>Gender:
+                <select name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="input-group">
+            <label>Income ($): <input type="number" step="0.01" name="income" required></label>
+        </div>
+
+        <!-- Expenses Section -->
+        <h3>Monthly Expenses ($)</h3>
+        <div class="input-group">
+            <label>Utilities: <input type="number" step="0.01" name="utilities" value="0"></label>
+        </div>
+
+        <div class="input-group">
+            <label>Entertainment: <input type="number" step="0.01" name="entertainment" value="0"></label>
+        </div>
+
+        <div class="input-group">
+            <label>School Fees: <input type="number" step="0.01" name="school_fees" value="0"></label>
+        </div>
+
+        <div class="input-group">
+            <label>Shopping: <input type="number" step="0.01" name="shopping" value="0"></label>
+        </div>
+
+        <div class="input-group">
+            <label>Healthcare: <input type="number" step="0.01" name="healthcare" value="0"></label>
+        </div>
+
+        <button type="submit">Submit Survey</button>
+    </form>
+
+    <script>
+        document.getElementById("surveyForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting immediately
+            alert("Thank you for submitting the survey!");
+            this.submit(); // Submit the form after showing the alert
+        });
+    </script>
+</body>
+</html>
